@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoomVitalLib.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace RoomVitalLib.Model
 {
     public class Sensor
     {
-        public int Temperatur { get; set; }
-        public int Luftfugtighed { get; set; }
-        public int Luftkvalitet { get; set; }
+        public int Temperatur { get; }
+        public int Luftfugtighed { get; }
+        public int Luftkvalitet { get; }
 
         public Sensor(int temperatur, int luftfugtighed, int luftkvalitet)
         {

@@ -1,6 +1,6 @@
 ﻿namespace RoomVitalLib.Model
 {
-    public class Lokale : Sensor
+    public class Lokale
     {
         public int Id { get; set; }
         public string Navn { get; set; }
@@ -9,7 +9,6 @@
         public StørrelseType StørrelseType { get; set; }
 
         public Lokale(int id, string navn, int antalPersoner, StørrelseType størrelseType, int temperatur, int luftfugtighed, int luftkvalitet)
-            :base(temperatur,luftfugtighed, luftkvalitet)
         {
             Id = id;
             Navn = navn;
@@ -25,9 +24,14 @@
             }
         }
 
+        public void Validation()
+        {
+            ValidereNavn();
+        }
+
         public override string ToString()
         {
-            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Navn)}={Navn}, {nameof(AntalPersoner)}={AntalPersoner.ToString()}, {nameof(StørrelseType)}={StørrelseType.ToString()}, {nameof(Temperatur)}={Temperatur.ToString()}, {nameof(Luftfugtighed)}={Luftfugtighed.ToString()}, {nameof(Luftkvalitet)}={Luftkvalitet.ToString()}}}";
+            return $"{{{nameof(Id)}={Id.ToString()}, {nameof(Navn)}={Navn}, {nameof(AntalPersoner)}={AntalPersoner.ToString()}, {nameof(StørrelseType)}={StørrelseType.ToString()}}}";
         }
     }
 }
