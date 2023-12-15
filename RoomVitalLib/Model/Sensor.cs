@@ -11,18 +11,16 @@ namespace RoomVitalLib.Model
     {
         public int Temperatur { get; }
         public int Luftfugtighed { get; }
-        public int Luftkvalitet { get; }
 
-        public Sensor(int temperatur, int luftfugtighed, int luftkvalitet)
+        public Sensor(int temperatur, int luftfugtighed)
         {
             Temperatur = temperatur;
             Luftfugtighed = luftfugtighed;
-            Luftkvalitet = luftkvalitet;
         }
 
         public override string ToString()
         {
-            return $"{{{nameof(Temperatur)}={Temperatur.ToString()}, {nameof(Luftfugtighed)}={Luftfugtighed.ToString()}, {nameof(Luftkvalitet)}={Luftkvalitet.ToString()}}}";
+            return $"{{{nameof(Temperatur)}={Temperatur.ToString()}, {nameof(Luftfugtighed)}={Luftfugtighed.ToString()}}}";
         }
     }
 }
